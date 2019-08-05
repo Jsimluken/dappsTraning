@@ -4,5 +4,19 @@
     </head>
     <body>
         <h1>Simple Storage!!</h1>
+        <div>
+            <input type="text" id="text">
+            <button id="btn">set</button>
+        </div>
+        <h2>history</h2>
     </body>
+    <script>
+        var btn = document.getElementById("btn");
+        btn.onclick = ()=>{
+            var text = document.getElementById("text").value;
+            contract.set(text,(r,e)=>{
+                console.log(r,e);
+            });
+        }
+    </script>
 </html>
