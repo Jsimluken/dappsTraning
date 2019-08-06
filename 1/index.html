@@ -9,6 +9,13 @@
             <button id="btn">set</button>
         </div>
         <h2>history</h2>
+        <table >
+            <thead style="border:solid"></thead>
+            <tr style="border:solid">
+                <th>id</th><th>data</th>
+            </tr>
+            <tbody id="table"></tbody>
+        </table>
     </body>
     <script>
         var btn = document.getElementById("btn");
@@ -18,5 +25,9 @@
                 console.log(r,e);
             });
         }
+        // contract.Set().watch((e,r)=>{
+        //     console.log(e,r);
+        //     console.log("Event");
+        // });
     </script>
 </html>

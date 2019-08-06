@@ -10,6 +10,15 @@ const getContract = async ()=>{
     abi = json.abi;
     address = json.networks[5777].address;
     contract = web3.eth.contract(abi).at(address);
+
+    contract.Set().watch((e,r)=>{
+        console.log(e,r);
+        console.log("Event")
+        var table = document.getElementById("table");
+        table.innerHTML = "<tr>testst</tr>";
+    })
 }
+
+
 
 getContract();
