@@ -2,6 +2,7 @@ pragma solidity ^0.5;
 
 
 contract RecoverAddress{
+
     function recoverAddress(bytes memory sig,bytes32 _hash) public pure returns (address){
         require(sig.length == 65);
         bytes32 ra;
@@ -21,5 +22,15 @@ contract RecoverAddress{
 
       address recoveredAddress = ecrecover(prefixedHash, va, ra, sa);
       return recoveredAddress;
+    }
+
+    /*function recoverAddress2(bytes memory sig,) public pure returns (address){
+
+    }*/
+    function packHashUint256(uint256 data1) public pure returns(bytes32) {
+        return keccak256(abi.encodePacked(data1,data1));
+    }
+    function packHashUint(uint data1) public pure returns(bytes32) {
+        return keccak256(abi.encodePacked(data1,data1));
     }
 }
