@@ -22,6 +22,7 @@ contract AtomicSwap721{
 
     event Open(uint256 _swapId); //TO DO more detail!!
     event Close(uint256 _swapId); // TO DO more detail!!;
+    event Expired(uint256 _swapId); // TODO
 
     mapping(uint256 => Swap) swaps;
     mapping(uint256 => States) states;
